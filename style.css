@@ -1,0 +1,158 @@
+:root {
+    --bg-color: #0d1117;
+    --text-primary: #e6edf3;
+    --accent-color: #58a6ff;
+    --accent-hover: #79c0ff;
+    
+    /* Result Colors (Adjusted for light background) */
+    --color-none: #2e8b57; /* 濃い緑 */
+    --color-fan: #d2691e;  /* 濃いオレンジ/茶 */
+    --color-line: #0066cc; /* 濃い青 */
+    --color-both: #c82a2a; /* 濃い赤 */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Viewer Section */
+.viewer-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.slide-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+}
+
+#campe-image {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Tool Overlay (Glassmorphism) */
+.tool-overlay.compact {
+    position: absolute;
+    bottom: 100px;
+    right: 140px; /* 前回調整した位置 */
+    width: auto;
+    background: rgba(255, 255, 255, 0.85); /* 白っぽい背景 */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 15px 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: grab;
+    user-select: none;
+    font-family: "Hiragino Maru Gothic ProN", "ヒラギノ丸ゴ ProN W4", sans-serif;
+}
+
+.tool-overlay.compact:active {
+    cursor: grabbing;
+}
+
+.compact-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.row-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #444444; /* 白背景に合わせて濃く */
+    width: 90px;
+}
+
+.bit-btn {
+    width: 64px;
+    height: 64px;
+    background: rgba(0, 0, 0, 0.05); /* 白背景用に変更 */
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    color: #444444;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bit-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.bit-btn.active {
+    background: var(--accent-color);
+    color: #ffffff;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(88, 166, 255, 0.4);
+}
+
+/* Result Display */
+.compact-result {
+    border-left: 2px solid rgba(0, 0, 0, 0.15);
+    padding-left: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+}
+
+.result-text {
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #333333;
+    text-shadow: none;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    width: 4.5em; /* 4文字+余白が収まる幅で固定 */
+    text-align: center;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF14 ケフカ 妖星乱舞 ギミック判定</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Viewer Section -->
+        <main class="viewer-container">
+            <div class="slide-wrapper">
+                <img id="campe-image" src="assets/main.png" alt="カンペ画像">
+            </div>
+        </main>
+
+        <!-- Tool Overlay -->
+        <div id="tool-overlay" class="tool-overlay compact">
+            <div class="compact-inputs">
+                <div class="input-row">
+                    <span class="row-label">チャージ</span>
+                    <button class="bit-btn" data-type="charge" data-bit="2">0</button>
+                    <button class="bit-btn" data-type="charge" data-bit="1">0</button>
+                </div>
+                <div class="input-row">
+                    <span class="row-label">アウト</span>
+                    <button class="bit-btn" data-type="out" data-bit="2">0</button>
+                    <button class="bit-btn" data-type="out" data-bit="1">0</button>
+                </div>
+            </div>
+            <div class="result-display compact-result">
+                <div id="result-text" class="result-text">-</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
