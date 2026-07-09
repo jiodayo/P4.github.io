@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             state.toolInputs[type][`bit${bit}`] = newVal;
             
             // Update UI
-            btn.textContent = newVal;
+            btn.textContent = newVal === 1 ? '真' : '偽';
             if (newVal === 1) {
                 btn.classList.add('active');
             } else {
